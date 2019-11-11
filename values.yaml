@@ -1,0 +1,13 @@
+replicaCount: 1
+image:
+  repository: softonic/kubewatch
+  tag: v0.4.0
+  pullPolicy: IfNotPresent
+resources:
+  limits:
+    cpu: 100m
+    memory: 32Mi
+  requests:
+    cpu: 100m
+    memory: 32Mi
+
