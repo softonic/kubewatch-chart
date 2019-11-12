@@ -8,7 +8,12 @@
 
 ### Overview
 
+This chart deploy the https://github.com/softonic/kubewatch event watcher Kubernetes api.
+It has a serviceaccount resource, that will allow you to talk to the api. And the clusterrole associated.
+It has a deployment resource in order to deploy the pod.
 
+
+### Configuration
 
 | Parameter                                           | Description                                                   | Default                            |
 | --------------------------------------------------- | ------------------------------------------------------------- | ---------------------------------- |
@@ -20,6 +25,15 @@
 | `resources.limits.cpu`                              | Resources limits for CPU for kubewatch container              | `100m`                             |
 | `resources.requests.memory`                         | Resources requests for memory for kubewatch container         | `32Mi`                             |
 | `resources.requests.cpu`                            | Resources requests for cpu for kubewatch container            | `100m`                             |
+
+### Installing the chart
+
+
+To install the chart with the release name my-release:
+
+```
+$ helm install . --name my-release --namespace my-namespace
+``` 
 
 
 
