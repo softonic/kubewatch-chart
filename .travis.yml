@@ -15,6 +15,9 @@ install:
 - /tmp/helm repo list
 - /tmp/helm lint .
 
+notifications:
+  slack: $SLACK
+  on_pull_requests: false
 
 deploy:
   provider: script
