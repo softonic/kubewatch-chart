@@ -1,3 +1,9 @@
+[![Latest Version](https://img.shields.io/github/release/softonic/kubewatch-chart.svg)](https://github.com/softonic/kubewatch-chart/releases)
+[![Software License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](LICENSE)
+[![Average time to resolve an issue](http://isitmaintained.com/badge/resolution/softonic/kubewatch-chart.svg)](http://isitmaintained.com/project/softonic/kubewatch-chart "Average time to resolve an issue")
+![GitHub issues](https://img.shields.io/github/issues-raw/softonic/kubewatch-chart)
+
+
 # Kubewatch 
 
 ### Overview
@@ -31,3 +37,8 @@ resources:
     cpu: 100m
     memory: 32Mi
 ```
+
+
+If you want to know how the application works , follow this link's readme
+
+https://github.com/softonic/kubewatch
