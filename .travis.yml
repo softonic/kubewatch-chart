@@ -2,21 +2,24 @@ language: minimal
 env:
   global:
   - HELM_VERSION="v2.14.3"
+  - CHART="kubewatch"
 install:
 - wget "https://storage.googleapis.com/kubernetes-helm/helm-${HELM_VERSION}-linux-amd64.tar.gz"
   -O /tmp/helm.tar.gz
 - tar zvxf /tmp/helm.tar.gz -C /tmp
 - mv /tmp/linux-amd64/helm /tmp/helm
 - chmod u+x /tmp/helm
+- "mkdir /var/tmp/${CHART}"
+- "cp -R ./ /var/tmp/${CHART}"
 - "/tmp/helm init --client-only"
 - "/tmp/helm repo add softonic $URL_CHARTMUSEUM"
 - "/tmp/helm plugin install https://github.com/chartmuseum/helm-push"
 - "/tmp/helm repo list"
-- "/tmp/helm lint ."
+- "/tmp/helm lint /var/tmp/${CHART}"
 deploy:
   provider: script
   script:
-  - "/tmp/helm push . softonic --force"
+  - "/tmp/helm push /var/tmp/${CHART} softonic --force"
   on:
     branch: master
 notifications:
