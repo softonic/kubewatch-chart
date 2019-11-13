@@ -20,7 +20,6 @@ install:
 deploy:
   provider: script
   script:
-  - "/tmp/helm push /var/tmp/${CHART} softonic --force"
   - "/tmp/helm push /var/tmp/${CHART} softonic-public --force"
   on:
     branch: master
